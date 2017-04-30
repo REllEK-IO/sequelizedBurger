@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-6 col-centered">
+        <div class="container main">
+            <h1 class="text-center" id="title">Eat the Burger</h1>
+            <img id="burger-main" src="assets/img/burger.svg" alt="Ya got a burger!">
+            <h3 class="text-center">What type of burger would you like?</h3>
+            <div class="row">
+                <div class="col-md-6" id="pending">
+                    {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <form class="burger-form clearfix" action="/api/update?_method=PUT" method="POST">
+                            <input class="burger" name="newText" value="{{this.burger_name}}"></input>
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="submit" class="enter-input-hack" tabindex="-1" />
+                        </form>
+                        <form class="eat-form" action="/api/eat/?_method=PUT" method="POST">
+                            <button class="btn btn-primary" type="submit" name="id" value="{{this.id}}">Eat Me</button>
+                        </form>
+                        <br>
+                        {{/unless}}
+                    {{/each}}
+                </div>
+                <div class="col-md-6" id="completed">
+                    {{#each burgers}}
+                        {{#if this.devoured}}
+                        <form class="burger-form clearfix" action="/api/update?_method=PUT" method="POST">
+                            <input class="burger" name="newText" value="{{this.burger_name}}"></input>
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="submit" class="enter-input-hack" tabindex="-1" />
+                        </form>
+                        <form class="eat-form" action="/api/eat/?_method=DELETE" method="POST">
+                            <button class="btn btn-primary" type="submit" name="id" value="{{this.id}}">Destroy</button>
+                        </form>
+                        <br>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            <div id="form">
+                <form class="clearfix" action="/api/new" method="post">
+                    <textarea name="text"></textarea>
+                    <button class="btn btn-primary right" type="submit">
+                            Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
