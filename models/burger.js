@@ -1,56 +1,26 @@
-var orm = require("../config/orm");
-
-var burger = function(){
-    var all = function(cb){
-        orm.getAll("burgers", function(res){
-            cb(res);
-        });
-    }
-
-    var get = function(condition, cb){
-        orm.get({
-            tableTarget : "burgers",
-            condition : condition
-        }, function(res){
-            cb(res);
-        });
-    }
-
-    var create = function(cols, vals, cb){
-        orm.set({
-            tableTarget : "burgers",
-            cols : cols,
-            vals : vals
-        }, function(res){
-            cb(res);
-        });
-    }
-
-    var update = function(objColVals, condition, cb){
-        orm.update({
-            tableTarget : "burgers",
-            colValues : objColVals,
-            condition : condition
-        }, function(res){
-            cb(res);
-        });
-    }
-
-    var del = function(condition, cb){
-        orm.del({
-            tableTarget : "burgers",
-            condition : condition
-        }, function(res){
-            cb(res);
-        });
-    }
-    return{
-        all : all,
-        get : get,
-        create : create,
-        update : update,
-        del : del
-    }
-}
-
-module.exports = burger();
+module.exports = function(sequelize, DataTypes) {
+    var Burger = sequelize.define("Burger", {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+            len: [1]
+        }
+    }, {
+        timestamps: true
+    });
+    return Burger;
+};

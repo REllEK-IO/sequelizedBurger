@@ -18,10 +18,15 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var db = require("./models");
+
 // Import routes
 var routes = require("./controllers/burger_controller");
 
 app.use("/", routes);
 
-console.log("Listening to PORT: " + PORT);
-app.listen(PORT);
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
+});
