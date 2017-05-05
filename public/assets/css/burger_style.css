@@ -1,118 +1,158 @@
-h3 {
-    font-size: 18px;
-    margin-bottom: 16px;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Audiowide', cursive !important;
-}
-
-body {
-    background-color: silver;
-    font-family: 'Roboto', sans-serif;
-    color: #e2c8c8;
-    background: url("../img/burgerjoint.jpg");
-    background-size: cover;
-}
-
-textarea {
-    width: 100%;
-    min-height: 125px;
-    border-bottom-right-radius: 50px;
-    box-shadow: inset -10px -10px 25px #3a4d45;
-    outline: none;
-    padding: 10px;
-    color: #e2c8c8;
-    background-color: rgba(0, 137, 104, 0.36);
-    border-color: #4e3d3d;
-}
-
-.col-centered {
-    margin: 0 auto;
-}
-
-.right {
-    float: right;
-}
-
-.main {
-    margin-top: 80px;
-    background-color: #8defd0;
-    border: 3px groove #e2c8c8;
-    border-radius: 15px;
-    box-shadow: inset 0px 0px 120px #4d4141;
-    background-color: rgba(24, 26, 29, 0.96);
-    border-top-left-radius: 90px;
-}
-
-.burger{
-    margin: 20px;
-    margin-top: 0px;
-    background-color: darkcyan;
-    padding: 5px;
-    border-radius: 3px;
-    text-align: center;
-    border: 1px solid cadetblue;
-}
-
-.burger-form{
-    width: 230px;
-    display: inline-block;
-}
-
-.eat-form{
-    display: inline;
-    width: 10px;
-}
-
-.btn-primary {
-    background-color: #3bc8a9;
-    border-color: #4e3d3d;
-    color: black;
-    font-weight: bolder;
-    font-family: 'Audiowide', cursive !important;
-    font-size: 14px;
-}
-
-.btn-primary:hover {
-    background-color: #14453b;
-    color: silver;
-    border-color: silver;
-}
-
-.clearfix {
-    clear: both;
-}
-
-.enter-input-hack{
-    display: none;
-}
-
-#title {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #dccaca;
-}
-
-#form {
-    width: 400px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    border-bottom-right-radius: 50px;
-}
-
-#pending{
-    border-right: 3px dotted;
-    margin-bottom: 20px;
-}
-
-#burger-main {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-}
+    h3 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: 'Audiowide', cursive !important;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333333;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: #111111;
+    }
+    
+    body {
+        background-color: silver;
+        font-family: 'Roboto', sans-serif;
+        color: #e2c8c8;
+        background: url("../img/burgerjoint.jpg");
+        background-size: cover;
+    }
+    
+    textarea {
+        width: 100%;
+        min-height: 125px;
+        border-bottom-right-radius: 50px;
+        box-shadow: inset -10px -10px 25px #3a4d45;
+        outline: none;
+        padding: 10px;
+        color: #e2c8c8;
+        background-color: rgba(0, 137, 104, 0.36);
+        border-color: #4e3d3d;
+    }
+    
+    select {
+        margin: 4px;
+        border: 1px solid silver;
+        border-radius: 5px;
+        background-color: #d1b9b9;
+        outline: none;
+        padding: 2px;
+    }
+    
+    .col-centered {
+        margin: 0 auto;
+    }
+    
+    .right {
+        float: right;
+    }
+    
+    .main {
+        margin-top: 80px;
+        background-color: #8defd0;
+        border: 3px groove #e2c8c8;
+        border-radius: 15px;
+        box-shadow: inset 0px 0px 120px #4d4141;
+        background-color: rgba(24, 26, 29, 0.96);
+        border-top-left-radius: 90px;
+    }
+    
+    .burger {
+        margin: 20px;
+        margin-top: 0px;
+        background-color: darkcyan;
+        padding: 5px;
+        border-radius: 3px;
+        text-align: center;
+        border: 1px solid cadetblue;
+    }
+    
+    .burger-form {
+        width: 230px;
+        display: inline-block;
+    }
+    
+    .eat-form {
+        display: inline;
+        width: 10px;
+    }
+    
+    .btn-primary {
+        background-color: #3bc8a9;
+        border-color: #4e3d3d;
+        color: black;
+        font-weight: bolder;
+        font-family: 'Audiowide', cursive !important;
+        font-size: 14px;
+    }
+    
+    .btn-primary:hover {
+        background-color: #14453b;
+        color: silver;
+        border-color: silver;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    .enter-input-hack {
+        display: none;
+    }
+    
+    .input-customer {
+        padding: 3px;
+        background-color: tan;
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+    
+    #title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #dccaca;
+    }
+    
+    #form {
+        width: 400px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        border-bottom-right-radius: 50px;
+    }
+    
+    #pending {
+        border-right: 3px dotted;
+        margin-bottom: 20px;
+    }
+    
+    #burger-main {
+        width: 200px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }

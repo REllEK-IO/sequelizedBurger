@@ -1,35 +1,27 @@
 module.exports = function(sequelize, DataTypes) {
-    var Burger = sequelize.define("Burger", {
+    var Customer = sequelize.define("Customer", {
         id: {
             type: DataTypes.INTEGER,
-            // allowNull: false,
+            allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-        burger_name: {
+        customer_name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
-        },
-        devoured: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,
-            len: [1]
         }
     }, {
         timestamps: false,
         classMethods: {
             associate: function(models) {
-                Burger.belongsTo(models.Customer, {
-                    foreignKey: {
-                        allowNull: true
-                    }
+                Customer.hasMany(models.Burger, {
+                    onDelete: "cascade"
                 });
             }
         }
     });
-    return Burger;
+    return Customer;
 };

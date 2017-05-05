@@ -11,7 +11,9 @@ router.get("/", function(req, res) {
     //     }
     //     res.render("index", hbsObject);
     // })
-    db.Burger.findAll({}).then(function(data) {
+    db.Burger.findAll({
+        include: db.Customer
+    }).then(function(data) {
         var hbsObject = {
             burgers: data
         }
@@ -31,8 +33,9 @@ router.post("/api/new", function(req, res) {
     // ], function() {
     //     res.redirect("/");
     // });
+    db.Customer.find
     db.Burger.create({
-        burger_name: req.body.text
+        burger_name: req.body.text,
     }).then(function() {
         res.redirect("/");
     })

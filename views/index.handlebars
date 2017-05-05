@@ -4,6 +4,11 @@
             <h1 class="text-center" id="title">Eat the Burger</h1>
             <img id="burger-main" src="assets/img/burger.svg" alt="Ya got a burger!">
             <h3 class="text-center">What type of burger would you like?</h3>
+            <ul>
+                {{#each customer}}
+                <li>{{this.customer}}</li>
+                {{/each}}
+            </ul>
             <div class="row">
                 <div class="col-md-6" id="pending">
                     {{#each burgers}}
@@ -39,6 +44,7 @@
             <div id="form">
                 <form class="clearfix" action="/api/new" method="post">
                     <textarea name="text"></textarea>
+                    {{!--<input class="input-customer" name="customer" placeholder="Name">--}}
                     <button class="btn btn-primary right" type="submit">
                             Submit
                     </button>
